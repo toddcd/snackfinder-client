@@ -1,26 +1,51 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import LoginPage from "./routes/LoginPage/LoginPage";
+import SearchPage from "./routes/SearchPage/SearchPage";
+import RegistrationPage from "./routes/RegistrationPage/RegistrationPage";
+import LandingPage from "./routes/LandingPage/LandingPage";
+import SigninForm from './components/LoginForm/SigninForm'
+import PublicOnlyRoute from "./components/Utils/PublicOnlyRoute";
+import PrivateRoute from "./components/Utils/PrivateRoute";
+import NotFoundPage from "./routes/NotFoundPage/NotFoundPage";
+import {Route, Switch} from 'react-router-dom'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+                <main>
+                    <Switch>
+                        <Route
+                            exact
+                            path={'/'}
+                            component={LandingPage}
+                        />
+                        <PublicOnlyRoute
+                            exact
+                            path={'/signin'}
+                            component={SigninForm}
+                        />
+                        <PublicOnlyRoute
+                            exact
+                            path={'/login'}
+                            component={LoginPage}
+                        />
+                        <PublicOnlyRoute
+                            exact
+                            path={'/register'}
+                            component={RegistrationPage}
+                        />
+                        <PrivateRoute
+                            exact
+                            path={'/search'}
+                            component={SearchPage}
+                        />
+                        <Route
+                            component={NotFoundPage}
+                        />
+                    </Switch>
+                </main>
+        </div>
+    );
 }
 
 export default App;

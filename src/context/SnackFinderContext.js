@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-const PortfolioCollectionContext = React.createContext({
+const SnackFinderContext = React.createContext({
     loggedIn: null,
     portfolioCollection: {},
     error: null,
@@ -15,9 +15,9 @@ const PortfolioCollectionContext = React.createContext({
     removePortfolio: () => {
     },
 })
-export default PortfolioCollectionContext
+export default SnackFinderContext
 
-export class PortfolioCollectionProvider extends Component {
+export class SnackFinderProvider extends Component {
     state = {
         loggedIn: null,
         portfolioCollection: {},
@@ -67,9 +67,9 @@ export class PortfolioCollectionProvider extends Component {
             clearError: this.clearError,
         }
         return (
-            <PortfolioCollectionContext.Provider value={value}>
+            <SnackFinderContext.Provider value={value}>
                 {this.props.children}
-            </PortfolioCollectionContext.Provider>
+            </SnackFinderContext.Provider>
         )
     }
 }

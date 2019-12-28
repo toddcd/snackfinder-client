@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import { Button, Input, Required } from '../Utils/ElementUtils'
-import AuthApiService from '../../services/auth-api-service'
-import './RegistrationForm.css'
+//import AuthApiService from '../../services/auth-api-service'
+import {Button, Grid, Link, TextField} from "@material-ui/core";
+import Box from "@material-ui/core/Box";
 
 export default class RegistrationForm extends Component {
     static defaultProps = {
@@ -13,88 +13,95 @@ export default class RegistrationForm extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault()
-        const {full_name, user_name, password, email} = ev.target
+        //const {full_name, user_name, password, email} = ev.target
 
         this.setState({error: null})
 
-        AuthApiService.postRegistration({
-            user_name: user_name.value,
-            password: password.value,
-            full_name: full_name.value,
-            email: email.value,
-        })
-            .then(user => {
-                full_name.value = ''
-                user_name.value = ''
-                password.value = ''
-                email.value = ''
-                this.props.onRegistrationSuccess()
-            })
-            .catch(res => {
-                this.setState({error: res.error})
-            })
+        // AuthApiService.postRegistration({
+        //     user_name: user_name.value,
+        //     password: password.value,
+        //     full_name: full_name.value,
+        //     email: email.value,
+        // })
+        //     .then(user => {
+        //         full_name.value = ''
+        //         user_name.value = ''
+        //         password.value = ''
+        //         email.value = ''
+        //         this.props.onRegistrationSuccess()
+        //     })
+        //     .catch(res => {
+        //         this.setState({error: res.error})
+        //     })
     }
 
     render() {
         const {error} = this.state
         return (
-            <div className='registration-container'>
-                <form
-                    className='registration-form'
-                    onSubmit={this.handleSubmit}
-                >
-                    <div role='alert'>
-                        {error && <p className='red'>{error}</p>}
-                    </div>
-                    <div className='full_name'>
-                        <label htmlFor='RegistrationForm__full_name'>
-                            Full name <Required/>
-                        </label>
-                        <Input className='register-input'
-                               name='full_name'
-                               type='text'
-                               required
-                               id='RegistrationForm__full_name'>
-                        </Input>
-                    </div>
-                    <div className='user_name'>
-                        <label htmlFor='RegistrationForm__user_name'>
-                            User name <Required/>
-                        </label>
-                        <Input className='register-input'
-                               name='user_name'
-                               type='text'
-                               required
-                               id='RegistrationForm__user_name'>
-                        </Input>
-                    </div>
-                    <div className='password'>
-                        <label htmlFor='RegistrationForm__password'>
-                            Password <Required/>
-                        </label>
-                        <Input className='register-input'
-                               name='password'
-                               type='password'
-                               required
-                               id='RegistrationForm__password'>
-                        </Input>
-                    </div>
-                    <div className='email'>
-                        <label htmlFor='RegistrationForm__email'>
-                            Email <Required/>
-                        </label>
-                        <Input className='register-input'
-                               name='email'
-                               type='email'
-                               required
-                               id='RegistrationForm__email'>
-                        </Input>
-                    </div>
-                    <Button className='reg-button' type='submit'>
-                        Register
-                    </Button>
+            <Grid item>
+                <form onSubmit={this.handleSubmit}>
+                    <Grid container justify='center' direction='column' alignItems='center' item>
+                        <div role='alert'>
+                            {error && <p className='red'>{error}</p>}
+                        </div>
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            id="fullname"
+                            label="Full Name"
+                            name="fullname"
+                            autoComplete="fullname"
+                            autoFocus
+                        />
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            id="username"
+                            label="User Name"
+                            name="username"
+                            autoComplete="username"
+                            // autoFocus
+                        />
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            id="regPassword"
+                            label="Password"
+                            name="password"
+                            type="password"
+                            autoComplete="password"
+                            // autoFocus
+                        />
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            id="email"
+                            label="Email"
+                            name="email"
+                            autoComplete="email"
+                            // autoFocus
+                        />
+                        <Box mt={2}>
+                            <Button variant="contained" color="secondary" type='submit'>
+                                Register
+                            </Button>
+                        </Box>
+                        <Box mt={4}>
+                            <Grid container direction="column" alignItems="center">
+                                <Grid item>
+                                    <Link href="/login" variant="body2">
+                                        {"Already have an account? Login here."}
+                                    </Link>
+                                </Grid>
+                            </Grid>
+                        </Box>
+                    </Grid>
                 </form>
-            </div>
+            </Grid>
         )
     }
 }

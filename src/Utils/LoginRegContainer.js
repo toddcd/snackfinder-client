@@ -5,8 +5,8 @@ import {Fade, Grid, Slide, withStyles} from "@material-ui/core";
 
 const useStyles = theme => ({
         root: {
-            display: 'flex',
             justifyContent: 'center',
+            display: 'flex',
             textAlign: 'center',
             wrap: 'noWrap',
             'min-height': '100vh',
@@ -19,12 +19,7 @@ const useStyles = theme => ({
                 paddingRight: '20px',
             },
         },
-        snackLogo: {
-            width: "42px",
-            height: "42px",
-            //color: '#7D2505',
-            color: 'grey',
-        },
+        snackLogo: theme.snackLogo,
         img: {
             minWidth: '100%',
             alignSelf: 'center',

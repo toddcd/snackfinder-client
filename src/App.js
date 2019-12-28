@@ -7,12 +7,14 @@ import SigninForm from './components/LoginForm/SigninForm'
 import PublicOnlyRoute from "./components/Utils/PublicOnlyRoute";
 import PrivateRoute from "./components/Utils/PrivateRoute";
 import NotFoundPage from "./routes/NotFoundPage/NotFoundPage";
-import {Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 function App() {
     return (
         <div className="App">
-                <main>
+            <main>
+                <BrowserRouter>
+
                     <Switch>
                         <Route
                             exact
@@ -43,7 +45,8 @@ function App() {
                             component={NotFoundPage}
                         />
                     </Switch>
-                </main>
+                </BrowserRouter>
+            </main>
         </div>
     );
 }

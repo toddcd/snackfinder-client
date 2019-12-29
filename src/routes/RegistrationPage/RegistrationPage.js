@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
-import LoginRegContainer from "../../Utils/LoginRegContainer";
+import BaseContainer from "../../Utils/BaseContainer";
+import MainLogo from "../../Utils/MainLogo";
 
 class RegistrationPage extends Component {
     static defaultProps = {
@@ -17,11 +18,12 @@ class RegistrationPage extends Component {
 
     render() {
         return (
-            <LoginRegContainer>
+            <BaseContainer>
+                <MainLogo/>
                 <RegistrationForm
                     onRegistrationSuccess={this.handleRegistrationSuccess}
                 />
-            </LoginRegContainer>
+            </BaseContainer>
         )
     }
 }

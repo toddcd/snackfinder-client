@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
+import SearchForm from "../../components/SearchForm/SearchForm";
+import BaseContainer from "../../Utils/BaseContainer";
 
 class SearchPage extends Component {
     render() {
         return (
-            <div>
-                Search Page!!!!
-            </div>
+            < BaseContainer>
+                <SearchForm/>
+            </BaseContainer>
         );
     }
 }

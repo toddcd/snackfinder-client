@@ -47,6 +47,7 @@ export default class LoginForm extends Component {
                         </div>
                         <TextField
                             variant="standard"
+                            fullWidth
                             margin="normal"
                             required
                             color="secondary"
@@ -58,6 +59,7 @@ export default class LoginForm extends Component {
                         />
                         <TextField
                             variant="standard"
+                            fullWidth
                             margin="normal"
                             color="secondary"
                             required

@@ -19,10 +19,10 @@ const theme = createMuiTheme({
         minHeight: '100vh',
     },
     snackLogo: {
-        width: "42px",
-        height: "42px",
-        //color: '#7D2505',
-        color: '#BAB6B3',
+        width: "32px",
+        height: "32px",
+        color: '#7D2505',
+        //color: '#BAB6B3',
     },
 });
 

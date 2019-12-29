@@ -45,7 +45,7 @@ export default class RegistrationForm extends Component {
                             {error && <p className='red'>{error}</p>}
                         </div>
                         <TextField
-                            variant="outlined"
+                            variant="standard"
                             margin="normal"
                             required
                             id="fullname"
@@ -55,7 +55,7 @@ export default class RegistrationForm extends Component {
                             autoFocus
                         />
                         <TextField
-                            variant="outlined"
+                            variant="standard"
                             margin="normal"
                             required
                             id="username"
@@ -65,7 +65,7 @@ export default class RegistrationForm extends Component {
                             // autoFocus
                         />
                         <TextField
-                            variant="outlined"
+                            variant="standard"
                             margin="normal"
                             required
                             id="regPassword"
@@ -76,7 +76,7 @@ export default class RegistrationForm extends Component {
                             // autoFocus
                         />
                         <TextField
-                            variant="outlined"
+                            variant="standard"
                             margin="normal"
                             required
                             id="email"

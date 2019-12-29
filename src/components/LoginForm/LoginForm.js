@@ -46,7 +46,7 @@ export default class LoginForm extends Component {
                             {error && <p className='red'>{error}</p>}
                         </div>
                         <TextField
-                            variant="outlined"
+                            variant="standard"
                             margin="normal"
                             required
                             color="secondary"
@@ -57,7 +57,7 @@ export default class LoginForm extends Component {
                             autoFocus
                         />
                         <TextField
-                            variant="outlined"
+                            variant="standard"
                             margin="normal"
                             color="secondary"
                             required

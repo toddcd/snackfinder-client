@@ -54,7 +54,7 @@ class BaseContainer extends Component {
                         <div className={classes.backGroundSideImage}/>
                     </Fade>
                 </Grid>
-                <Grid container justify="center" item>
+                <Grid container justify="center" alignContent='center' item>
                     {this.props.children}
                 </Grid>
                 <Grid container item justify="flex-start" alignContent="center">

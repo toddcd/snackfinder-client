@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {BeerIcon, CoffeeIcon, MuffinIcon, TacoIcon} from '../../static/images/SnackIcons'
-import {Button, Grid, withStyles} from "@material-ui/core";
+import smallLogo from '../../static/images/nav-logo-orange.png'
+import {Button, withStyles} from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import Avatar from "@material-ui/core/Avatar";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -47,6 +49,7 @@ const useStyles = theme => ({
             alignSelf: 'center',
             objectFit: 'contain',
         },
+        avatar: theme.avatar,
     }
 );
 
@@ -70,7 +73,6 @@ const marks = [
 ];
 
 class SearchForm extends Component {
-
     state = {
         snackType: '',
         location: '',
@@ -87,7 +89,7 @@ class SearchForm extends Component {
     }
 
     setGeoLocation(value) {
-        if (value === 'current') {
+        if (value !== 'alt') {
             let html5GeoLocationPromise = new Promise(function (resolve, reject) {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     resolve(
@@ -102,6 +104,7 @@ class SearchForm extends Component {
 
                 //query['geography'] = geography;
                 const center = geography['lat'] + ',' + geography['lng'];
+                console.log('geolocation from browser: ' + center)
 
                 this.setState({...this.state, locationCenter: center});
                 //openResultListPage(query);
@@ -141,6 +144,11 @@ class SearchForm extends Component {
         const {classes} = this.props;
         return (
             <Grid container direction='column' justify='center' alignItems='center'>
+                <div>
+                    <Box pb={3}>
+                    <img src={smallLogo}/>
+                    </Box>
+                </div>
                 <form className={classes.formContainer} onSubmit={this.handleSubmit}>
                     <FormControl>
                         <Grid container direction='column' justify='center' alignItems='center'>
@@ -159,7 +167,7 @@ class SearchForm extends Component {
                                             label="Coffee"
                                             labelPlacement='end'
                                         />
-                                        <Avatar>
+                                        <Avatar className={classes.avatar}>
                                             <CoffeeIcon className={classes.snackLogo}/>
                                         </Avatar>
                                     </Grid>
@@ -177,7 +185,7 @@ class SearchForm extends Component {
                                             label="Pastries"
                                             labelPlacement='end'
                                         />
-                                        <Avatar>
+                                        <Avatar className={classes.avatar}>
                                             <MuffinIcon className={classes.snackLogo}/>
                                         </Avatar>
                                     </Grid>
@@ -195,8 +203,10 @@ class SearchForm extends Component {
                                             label="Tacos"
                                             labelPlacement='end'
                                         />
-                                        <Avatar>
+                                        <Avatar className={classes.avatar}>
+                                            <Box p={2}>
                                             <TacoIcon className={classes.snackLogo}/>
+                                            </Box>
                                         </Avatar>
                                     </Grid>
                                 </Box>
@@ -213,7 +223,7 @@ class SearchForm extends Component {
                                             label="Beer"
                                             labelPlacement='end'
                                         />
-                                        <Avatar>
+                                        <Avatar className={classes.avatar}>
                                             <BeerIcon className={classes.snackLogo}/>
                                         </Avatar>
                                     </Grid>
@@ -238,6 +248,7 @@ class SearchForm extends Component {
                                 />
                             </Box>
                         </Grid>
+                        <Divider/>
                         <Grid item>
                             <RadioGroup style={{width: '100%'}} aria-label="location" name="location"
                                         value={this.state.location}

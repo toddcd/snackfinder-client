@@ -25,6 +25,7 @@ const useStyles = theme => ({
             alignSelf: 'center',
             objectFit: 'contain',
         },
+        avatar: theme.avatar,
     }
 );
 
@@ -33,7 +34,7 @@ class MainLogo extends Component {
         const {classes} = this.props;
         return (
             <div>
-                <Grid container item justify="center" alignContent="flex-end">
+                <Grid container item justify="center" alignContent="center" >
                     <Slide direction="down" in={true} timeout={500}>
                         <div className={classes.imageContainer}>
                             <Fade in={true} timeout={2000}>
@@ -46,7 +47,7 @@ class MainLogo extends Component {
                         <Grid item>
                             <Slide direction="right" in={true} timeout={1500}>
                                 <div>
-                                    <Avatar alt="coffee icon">
+                                    <Avatar className={classes.avatar} alt="coffee icon">
                                         <CoffeeIcon className={classes.snackLogo}/>
                                     </Avatar>
                                 </div>
@@ -55,7 +56,7 @@ class MainLogo extends Component {
                         <Grid item>
                             <Slide direction="right" in={true} timeout={1000}>
                                 <div>
-                                    <Avatar alt='muffin icon'>
+                                    <Avatar className={classes.avatar} alt='muffin icon'>
                                         <MuffinIcon className={classes.snackLogo}/>
                                     </Avatar>
                                 </div>
@@ -64,7 +65,7 @@ class MainLogo extends Component {
                         <Grid item>
                             <Slide direction="left" in={true} timeout={1000}>
                                 <div>
-                                    <Avatar alt='taco icon'>
+                                    <Avatar className={classes.avatar} alt='taco icon'>
                                         <TacoIcon className={classes.snackLogo}/>
                                     </Avatar>
                                 </div>
@@ -73,7 +74,7 @@ class MainLogo extends Component {
                         <Grid item>
                             <Slide direction="left" in={true} timeout={1500}>
                                 <div>
-                                    <Avatar alt='beer icon'>
+                                    <Avatar className={classes.avatar} alt='beer icon'>
                                         <BeerIcon className={classes.snackLogo}/>
                                     </Avatar>
                                 </div>

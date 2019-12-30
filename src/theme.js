@@ -21,9 +21,13 @@ const theme = createMuiTheme({
     snackLogo: {
         width: "32px",
         height: "32px",
-        color: '#7D2505',
-        //color: '#BAB6B3',
+        padding: '0 1px 0 2px',
+        //color: '#7D2505',
+        color: '#ffffff',
     },
+    avatar: {
+        backgroundColor: '#7D2505'
+    }
 });
 
 export default theme;

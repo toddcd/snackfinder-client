@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {BeerIcon, CoffeeIcon, MuffinIcon, TacoIcon} from '../static/images/SnackIcons'
 import sidelogo from "../static/images/side-logo.png";
-import {Box, Fade, Grid, Slide, withStyles} from "@material-ui/core";
-import Avatar from "@material-ui/core/Avatar";
+import {Fade, Grid, withStyles} from "@material-ui/core";
 
 const useStyles = theme => ({
         root: {

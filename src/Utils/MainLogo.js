@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {BeerIcon, CoffeeIcon, MuffinIcon, TacoIcon} from '../static/images/SnackIcons'
-import {Box, Fade, Grid, Slide, withStyles} from "@material-ui/core";
+import {Fade, Grid, Slide, withStyles} from "@material-ui/core";
 import Avatar from "@material-ui/core/Avatar";
 
 const useStyles = theme => ({
@@ -46,7 +46,7 @@ class MainLogo extends Component {
                         <Grid item>
                             <Slide direction="right" in={true} timeout={1500}>
                                 <div>
-                                    <Avatar large alt="coffee icon">
+                                    <Avatar alt="coffee icon">
                                         <CoffeeIcon className={classes.snackLogo}/>
                                     </Avatar>
                                 </div>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
-import SigninForm from '../../components/LoginForm/SigninForm'
+//import SigninForm from '../../components/LoginForm/SigninForm'
 import BaseContainer from "../../Utils/BaseContainer";
 import SnackFinderContext from "../../context/SnackFinderContext";
 import MainLogo from "../../Utils/MainLogo";

@@ -5,7 +5,7 @@ import BaseContainer from "../../Utils/BaseContainer";
 class SearchPage extends Component {
     render() {
         return (
-            < BaseContainer>
+            <BaseContainer>
                 <SearchForm/>
             </BaseContainer>
         );

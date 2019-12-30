@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
-import SigninForm from '../../components/LoginForm/SigninForm'
-
-import LoginRegContainer from "../../Utils/LoginRegContainer";
+//import SigninForm from '../../components/LoginForm/SigninForm'
+import BaseContainer from "../../Utils/BaseContainer";
 import SnackFinderContext from "../../context/SnackFinderContext";
+import MainLogo from "../../Utils/MainLogo";
 
 class LoginPage extends Component {
     static defaultProps = {
@@ -24,11 +24,12 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <LoginRegContainer>
+            <BaseContainer>
+                <MainLogo/>
                 <LoginForm
                     onLoginSuccess={this.handleLoginSuccess}
                 />
-            </LoginRegContainer>
+            </BaseContainer>
         )
     }
 }

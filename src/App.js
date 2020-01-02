@@ -8,6 +8,7 @@ import PublicOnlyRoute from "./components/Utils/PublicOnlyRoute";
 import PrivateRoute from "./components/Utils/PrivateRoute";
 import NotFoundPage from "./routes/NotFoundPage/NotFoundPage";
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import FavoritesPage from "./routes/FavoritesPage/FavoritesPage";
 
 function App() {
     return (
@@ -28,6 +29,16 @@ function App() {
                         exact
                         path={'/register'}
                         component={RegistrationPage}
+                    />
+                    <PrivateRoute
+                        exact
+                        path={'/favorites'}
+                        component={FavoritesPage}
+                    />
+                    <PrivateRoute
+                        exact
+                        path={'/addfavorite'}
+                        component={LoginPage}
                     />
                     <PrivateRoute
                         exact

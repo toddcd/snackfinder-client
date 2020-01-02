@@ -146,7 +146,7 @@ class SearchForm extends Component {
             <Grid container direction='column' justify='center' alignItems='center'>
                 <div>
                     <Box pb={3}>
-                    <img src={smallLogo}/>
+                        <img src={smallLogo}/>
                     </Box>
                 </div>
                 <form className={classes.formContainer} onSubmit={this.handleSubmit}>
@@ -205,7 +205,7 @@ class SearchForm extends Component {
                                         />
                                         <Avatar className={classes.avatar}>
                                             <Box p={2}>
-                                            <TacoIcon className={classes.snackLogo}/>
+                                                <TacoIcon className={classes.snackLogo}/>
                                             </Box>
                                         </Avatar>
                                     </Grid>

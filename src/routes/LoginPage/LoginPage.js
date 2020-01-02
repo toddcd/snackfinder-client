@@ -19,7 +19,7 @@ class LoginPage extends Component {
     handleLoginSuccess = () => {
         const { history } = this.props
         this.context.setLoggedIn(true)
-        history.push('/search')
+        history.push('/favorites')
     }
 
     render() {

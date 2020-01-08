@@ -1,23 +1,27 @@
-import React from 'react'
-import { Route, Redirect } from 'react-router-dom'
-//import TokenService from '../../services/token-service'
+import React, { Component } from 'react'
+import Landing from '../../components/Landing/Landing'
+import Grid from "@material-ui/core/Grid";
+import {Container} from "@material-ui/core";
 
-export default function LandingPage({ component, ...props }) {
-    const Component = component
-    return (
-        <Route
-            {...props}
-            render={componentProps => (
-                // TokenService.hasAuthToken()
-                false
-                    ? <Component {...componentProps} />
-                    : <Redirect
-                        to={{
-                            pathname: '/login',
-                            state: { from: componentProps.location }
-                        }}
-                    />
-            )}
-        />
-    )
+export default class LandingPage extends Component {
+    static defaultProps = {
+        location: {},
+        history: {
+            push: () => {},
+        },
+    }
+
+    handleLoginSuccess = () => {
+        const { location, history } = this.props
+        const destination = (location.state || {}).from || '/collection'
+        history.push(destination)
+    }
+
+    render() {
+        return (
+          <div>
+              <Landing />
+          </div>
+        )
+    }
 }

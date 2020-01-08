@@ -1,0 +1,62 @@
+.landingContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 100vh;
+}
+
+.imageContainer1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    minwidth: 100%;
+    minheight: 100%;
+}
+
+/*.backGroundSideImage {*/
+/*    background: 'url(../../static/images/desktop-beans.png) no-repeat center center`;*/
+/*    backgroundSize: 'cover';*/
+/*    width: '100%';*/
+/*    height: '100%';*/
+/*}*/
+
+.imageContainer1 img {
+    alignSelf: center;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.imageContainer2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.imageContainer2 img {
+    alignSelf: center;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.mobile {
+    display: none;
+}
+.desktop {
+    display: initial;
+}
+
+@media only screen and (max-width: 525px) {
+    .mobile {
+        display: initial;
+    }
+    .desktop {
+        display: none;
+    }
+}

@@ -9,6 +9,7 @@ import PrivateRoute from "./components/Utils/PrivateRoute";
 import NotFoundPage from "./routes/NotFoundPage/NotFoundPage";
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import FavoritesPage from "./routes/FavoritesPage/FavoritesPage";
+import Grid from "@material-ui/core/Grid";
 
 function App() {
     return (

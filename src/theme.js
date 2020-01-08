@@ -27,7 +27,7 @@ const theme = createMuiTheme({
     },
     avatar: {
         backgroundColor: '#7D2505'
-    }
+    },
 });
 
 export default theme;
